@@ -20,6 +20,9 @@
         <li class="my-5">
             <a href="{{route("profile.createpost",auth()->user()->id)}}" class="text-decoration-none"><i class="fa fa-user-plus" aria-hidden="true"></i> create post </a> 
         </li>
+        <li class="my-5">
+            <a href="{{route("profile.showorders",auth()->user()->id)}}" class="text-decoration-none"><i class="fa fa-first-order" aria-hidden="true"></i> orders </a> 
+        </li>
         <li class="my-5" 
         style="position: relative ; "
         >
@@ -67,6 +70,12 @@
                                     <a href="{{route("posts.show",$notification->data["approvedpost"]["id"])}}" class="btn btn-info"> view post</a>
                                 </li>
                                 @endif
+                                @if ($notification->type == "App\Notifications\OrderNotification")
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>new order request on post of <strong style="color:#fe364a">"{{$notification->data["order"]["title"]}}"</strong>  </span>
+                                    <a href="{{route("profile.showorders",auth()->user()->id)}}" class="btn btn-info"> view order </a>
+                                </li>
+                                @endif
                                 @endforeach
                             </ul> 
                             {{$notifications->links()}}
@@ -100,6 +109,7 @@
         top: 0px ; 
         left:0px  ; 
         padding-top: 70px ; 
+        overflow: auto ; 
 
         
     }

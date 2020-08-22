@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserProfileController extends Controller
 {
-    public function index(User $user) {
+    public function index(User $user) { 
         return view("profile.index")->with("user",$user) ; 
     }
     public function edit(User $user) {

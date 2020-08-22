@@ -20,6 +20,9 @@
         <li class="my-5">
             <a href="{{route("profile.createpost",auth()->user()->id)}}" class="text-decoration-none"><i class="fa fa-user-plus" aria-hidden="true"></i> create post </a> 
         </li>
+        <li class="my-5">
+            <a href="{{route("profile.showorders",auth()->user()->id)}}" class="text-decoration-none"><i class="fa fa-first-order" aria-hidden="true"></i> orders </a> 
+        </li>
         <li class="my-5" 
         style="position: relative ; "
         >
@@ -90,6 +93,7 @@
         top: 0px ; 
         left:0px  ; 
         padding-top: 70px ; 
+        overflow: auto ; 
 
         
     }

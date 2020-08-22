@@ -234,7 +234,8 @@ margin-top: 90px ;
         "profile/".auth()->user()->id."/posts" , 
         "profile/".auth()->user()->id."/waitposts" , 
         "profile/".auth()->user()->id."/createpost" ,
-        "profile/".auth()->user()->id."/notifications"
+        "profile/".auth()->user()->id."/notifications",
+        "profile/".auth()->user()->id."/orders"
         
 
     ]))

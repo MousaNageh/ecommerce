@@ -28,6 +28,9 @@
                 <i class="fa fa-user-plus" aria-hidden="true"></i> create post
                 @endisset </a> 
         </li>
+        <li class="my-5">
+            <a href="{{route("profile.showorders",auth()->user()->id)}}" class="text-decoration-none"><i class="fa fa-first-order" aria-hidden="true"></i> orders </a> 
+        </li>
         <li class="my-5" 
         style="position: relative ; "
         >

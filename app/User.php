@@ -44,6 +44,12 @@ class User extends Authenticatable
         return false ; 
     } 
     public function posts(){
-        return $this->hasMany(Post::class) ; 
+        return $this->hasMany(Post::class,"user_id") ; 
+    }
+    public function orders(){
+        return $this->hasMany(Order::class , "owner_id") ; 
+    }
+    public function customers(){
+        return $this->hasMany(Order::class,"customer_id") ; 
     }
 }

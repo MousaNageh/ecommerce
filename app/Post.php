@@ -18,9 +18,13 @@ class Post extends Model
     public function tags(){
         return $this->belongsToMany(Tag::class) ; 
     }
+    public function orders(){
+        return $this->hasMany(Order::class ,"post_id"); 
+    }
     public function deleteImage(){
         Storage::delete($this->featured) ; 
     } 
+
     public function scopePostserch($builder){
         $request = request()->query("post") ; 
         if(empty($request))

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\OrderNotification;
+use App\Order;
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
@@ -30,8 +32,13 @@ class PostController extends Controller
 	curl_close($ch);
         if(isset(json_decode($responseData)->id))
         {
-            session()->flash("success","you payment completed succeffully") ; 
-            
+            Order::create([
+                "customer_id"=>auth()->user()->id ,
+                "owner_id"=>$post->user_id , 
+                "post_id"=>$post->id   
+            ]) ;
+            $post->user->notify(new OrderNotification($post)) ; 
+            session()->flash("success","you payment completed succeffully") ;  
         }
         else
         {

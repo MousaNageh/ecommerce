@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateCategorySeeder::class) ; 
         $this->call(CreateTagsSeeder::class) ; 
         $this->call(CreateUserSeeder::class) ; 
-        $this->call(createPostSeeder::class) ; 
+        $this->call(createPostSeeder::class) ;
+        $this->call(orderSedder::class) ;  
     }
 }

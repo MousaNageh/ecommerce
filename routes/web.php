@@ -36,6 +36,7 @@ Route::put("/profile/{user}/update" , "UserProfileController@update")->name("pro
 Route::get("/profile/{user}/posts" , "UserProfileController@posts")->name("profile.posts") ; 
 Route::get("/profile/{user}/waitposts" , "UserProfileController@waitposts")->name("profile.waitposts") ; 
 Route::get("/profile/{user}/createpost" , "UserProfileController@createpost")->name("profile.createpost") ;
+Route::get("/profile/{user}/orders" , "OrderController@index")->name("profile.showorders") ;
 Route::post("/profile/{user}/store" , "UserProfileController@store")->name("profile.store") ;
 Route::get("/profile/{user}/notifications" , "UserProfileController@notifications")->name("profile.notifications") ;
 Route::middleware(["checkAuthOfPost"])->delete("/profile/{user}/{post}/delete" ,"UserProfileController@delete")->name("profile.deletepost"); 
